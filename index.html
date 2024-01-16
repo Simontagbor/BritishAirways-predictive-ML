@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exploratory Visualizations of the data</title>
+<title>index</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,60 +80,81 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Exploratory Visualizations of the data</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<h1>
-Predictive Modeling of British Airways Customer Bookings
+<div style="text-align: left;">
+<h1 style="color: #00205b; font-family: 'Georgia';">
+How Predictive Models Help British Airways Acquire Customers
 </h1>
+<p style="font-size: small;">
+Author: Simontagbor
+</p>
+<p style="font-size: small;">
+Last updated: 2024-01-16
+</p>
+</div>
+<hr>
+<div style="text-align: center;">
+<p><a href="https://github.com/Simontagbor" style="text-decoration: none; color: black; font-size: larger; margin-right: 20px;"> <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="35" style="vertical-align: middle; margin-right: 10px;"> </a> <a href="https://www.kaggle.com/simontagbor" style="text-decoration: none; color: black; font-size: larger;"> <img src="https://www.kaggle.com/static/images/site-logo.png" height="30" style="vertical-align: middle; margin-right: 10px;"> </a></p>
+</div>
 <hr>
 <blockquote class="blockquote">
-<p>This project is about combating the problem of unstable buying cycle of British Airways customers using the power of predictive modeling. the source code for this project can be found at my <a href="https://github.com/Simontagbor/BritishAirways-predictive-ML">github</a> page</p>
+This project is about combating the problem of unstable buying cycle of British Airways customers using the power of predictive modeling. The project was done as part of a job simulation as a Junior Data Scientist at British Airways. In this Interactive Notebook I will show you the steps I took to build a predictive model that will help British Airways acquire customers. The project is divided into 4 parts: 1. Exploratory Data Analysis 2. Data Cleaning and Preparation 3. Feature Engineering 4. Modeling and Evaluation The source code for this project can be found at my <a href="https://github.com/Simontagbor/BritishAirways-predictive-ML">github</a> page.
+<p>
+You can also find the Jupyter notebook and the dataset on my <a href="https://www.kaggle.com/simontagbor/british-airways-predictive-ml">kaggle page</a>.
+</p>
 </blockquote>
 <h2 class="anchored">
 Project Overview
 </h2>
 <p><em>For this project I completed the following tasks:</em></p>
 <ul class="task-list">
-<li><input type="checkbox" checked="">Read and explore the given dataset.</li>
-<li><input type="checkbox" checked="">Clean and Prepare the data for modeling.</li>
-<li><input type="checkbox" checked="">Perform Exploratory Data Analysis.</li>
-<li><input type="checkbox" checked="">Perform Feature Engineering.</li>
-<li><input type="checkbox" checked="">Build and Evaluate models.</li>
+<li><input type="checkbox" checked="">Performed Exploratory Data Analysis.</li>
+<li><input type="checkbox" checked="">Cleaned and Prepared the data for modeling.</li>
+<li><input type="checkbox" checked="">Performed Feature Engineering.</li>
+<li><input type="checkbox" checked="">Built and Evaluated models.</li>
+<li><input type="checkbox" checked="">Test the model on unseen data.</li>
 <li><input type="checkbox" checked="">Interpret the model results and make predictions.</li>
 </ul>
-<h3 class="anchored">
-Exploratory data analysis
-</h3>
+<h2 class="anchored">
+Project Dependencies
+</h2>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import project libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># for linear algebra</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math <span class="co"># for math operations </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co"># for plotting</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># handling files</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># visualisation libraries</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for plotting</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> squarify <span class="co"># for tree maps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h2 class="anchored">
+Exploratory Data Analysis
+</h2>
 <p>
 To understand the data, I performed exploratory data analysis. I used the following techniques to understand the data:
 </p>
 <ul class="task-list">
-<li><input type="checkbox" checked="">Univariate analysis</li>
-<li><input type="checkbox" checked="">Bivariate analysis</li>
-<li><input type="checkbox" checked="">Multivariate analysis</li>
+<li><input type="checkbox" checked="">Visual inspection of data.</li>
+<li><input type="checkbox" checked="">Exploratory Data Visualizations.(Univariate, Bivariate and Multivariate analysis)</li>
 </ul>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="37">
+<h3 class="anchored">
+Visual Inspection of Data
+</h3>
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"predictive_model_data/customer_booking.csv"</span>, encoding<span class="op">=</span><span class="st">"ISO-8859-1"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -249,9 +270,10 @@ To understand the data, I performed exploratory data analysis. I used the follow
 </div>
 </div>
 </div>
-<p>The <code>.head()</code> method allows us to view the first 5 rows in the dataset, this is useful for visual inspection of our columns</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The dataframe object has a <code>.head()</code> method that allows us to view a specified number of rows in the dataset. This method came in handy for visual inspection of the dataset and to get a feel of the data.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve a summarised info about the columns</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 50000 entries, 0 to 49999
@@ -276,32 +298,88 @@ dtypes: float64(1), int64(8), object(5)
 memory usage: 5.3+ MB</code></pre>
 </div>
 </div>
-<p>The <code>.info()</code> method gives us a data description, telling us the names of the columns, their data types and how many null values we have. Fortunately, we have no null values. It looks like some of these columns should be converted into different data types, e.g.&nbsp;flight_day.</p>
-<p>To provide more context, below is a more detailed data description, explaining exactly what each column means:</p>
+The summary on the columns indicates that there are:
 <ul>
-<li><code>num_passengers</code> = number of passengers travelling</li>
-<li><code>sales_channel</code> = sales channel booking was made on</li>
-<li><code>trip_type</code> = trip Type (Round Trip, One Way, Circle Trip)</li>
-<li><code>purchase_lead</code> = number of days between travel date and booking date</li>
-<li><code>length_of_stay</code> = number of days spent at destination</li>
-<li><code>flight_hour</code> = hour of flight departure</li>
-<li><code>flight_day</code> = day of week of flight departure</li>
-<li><code>route</code> = origin -&gt; destination flight route</li>
-<li><code>booking_origin</code> = country from where booking was made</li>
-<li><code>wants_extra_baggage</code> = if the customer wanted extra baggage in the booking</li>
-<li><code>wants_preferred_seat</code> = if the customer wanted a preferred seat in the booking</li>
-<li><code>wants_in_flight_meals</code> = if the customer wanted in-flight meals in the booking</li>
-<li><code>flight_duration</code> = total duration of flight (in hours)</li>
-<li><code>booking_complete</code> = flag indicating if the customer completed the booking</li>
+<li>
+<strong>14 unique columns</strong>
+</li>
+<li>
+<strong>5000 rows</strong>
+</li>
+<li>
+<strong>Zero null values (which is good!)</strong>
+</li>
+<li>
+<strong>Three unique data types (int64, float64 and object)</strong>
+</li>
 </ul>
-<p>Before we compute any statistics on the data, lets do any necessary data conversion</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="4">
+Here is a more detailed data description, explaining exactly what each column means:
+<details>
+<summary>
+Click to expand!
+</summary>
+<ul>
+<li>
+<code>num_passengers</code> = the number of passengers associated with a particular flight booking.
+</li>
+<li>
+<code>sales_channel</code> = indicates the channel through which the flight booking was made.
+</li>
+<li>
+<code>trip_type</code> = indicates the trip Type (Round Trip, One Way, Circle Trip)
+</li>
+<li>
+<code>purchase_lead</code> = the number of days between travel date and booking date
+</li>
+<li>
+<code>length_of_stay</code> = the number of days spent at destination
+</li>
+<li>
+<code>flight_hour</code> = represents the scheduled departure or arrival time of the flight
+</li>
+<li>
+<code>flight_day</code> = day of week of flight departure
+</li>
+<li>
+<code>route</code> = origin -&gt; represents the destination flight route
+</li>
+<li>
+<code>booking_origin</code> = shows the country from where booking was made
+</li>
+<li>
+<code>wants_extra_baggage</code> = indicates if the customer wanted extra baggage in the booking
+</li>
+<li>
+<code>wants_preferred_seat</code> = indicates if the customer wanted a preferred seat in the booking
+</li>
+<li>
+<code>wants_in_flight_meals</code> = if the customer wanted in-flight meals in the booking
+</li>
+<li>
+<code>flight_duration</code> = shows the total duration of flight (in hours)
+</li>
+<li>
+<code>booking_complete</code> = indicates if the customer completed the booking
+</li>
+</ul>
+</details>
+<p>Considering the unique data types, I decided to perform <strong>label encoding</strong> to convert the categorical variables to numerical variables. converting categorical variables to numerical representations will allow me to use machine learning algorithms effectively.</p>
+<p>
+In our case the ideal candidate for label encoding is: <code>flight_day</code>. this is because it is currently a nominal variable with no order or hierarchy.
+</p>
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"flight_day"</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>array(['Sat', 'Wed', 'Thu', 'Mon', 'Sun', 'Tue', 'Fri'], dtype=object)</code></pre>
 </div>
 </div>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="5">
+<p>
+As can be seen the current days of the week have no order or hierarchy.
+</p>
+<p>
+To encode this variable I will map the days of the week to the following numerical representations:
+</p>
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mapping <span class="op">=</span> {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Mon"</span>: <span class="dv">1</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tue"</span>: <span class="dv">2</span>,</span>
@@ -312,15 +390,20 @@ memory usage: 5.3+ MB</code></pre>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sun"</span>: <span class="dv">7</span>,</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"flight_day"</span>] <span class="op">=</span> df[<span class="st">"flight_day"</span>].<span class="bu">map</span>(mapping)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># set the new values</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"flight_day"</span>] <span class="op">=</span> df[<span class="st">"flight_day"</span>].<span class="bu">map</span>(mapping)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="6">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"flight_day"</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>array([6, 3, 4, 1, 7, 2, 5])</code></pre>
 </div>
 </div>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="7">
+<p>As can be seen the <code>fligt_days</code> column has been successfully encoded.</p>
+<h3 class="anchored">
+Summary Statistics
+</h3>
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
@@ -453,38 +536,21 @@ memory usage: 5.3+ MB</code></pre>
 </div>
 </div>
 </div>
-<p>The <code>.describe()</code> method gives us a summary of descriptive statistics over the entire dataset (only works for numeric columns). This gives us a quick overview of a few things such as the mean, min, max and overall distribution of each column.</p>
-<p>From this point, you should continue exploring the dataset with some visualisations and other metrics that you think may be useful. Then, you should prepare your dataset for predictive modelling. Finally, you should train your machine learning model, evaluate it with performance metrics and output visualisations for the contributing variables. All of this analysis should be summarised in your single slide.</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 50000 entries, 0 to 49999
-Data columns (total 14 columns):
- #   Column                 Non-Null Count  Dtype  
----  ------                 --------------  -----  
- 0   num_passengers         50000 non-null  int64  
- 1   sales_channel          50000 non-null  object 
- 2   trip_type              50000 non-null  object 
- 3   purchase_lead          50000 non-null  int64  
- 4   length_of_stay         50000 non-null  int64  
- 5   flight_hour            50000 non-null  int64  
- 6   flight_day             50000 non-null  int64  
- 7   route                  50000 non-null  object 
- 8   booking_origin         50000 non-null  object 
- 9   wants_extra_baggage    50000 non-null  int64  
- 10  wants_preferred_seat   50000 non-null  int64  
- 11  wants_in_flight_meals  50000 non-null  int64  
- 12  flight_duration        50000 non-null  float64
- 13  booking_complete       50000 non-null  int64  
-dtypes: float64(1), int64(9), object(4)
-memory usage: 5.3+ MB</code></pre>
-</div>
-</div>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Check for Nmissing values</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<h4 class="anchored">
+Some Highlights from The summary statistics
+</h4>
+<ol type="1">
+<li><p>The majority of bookings involve a small <code>number of passengers</code>, with 75% of the bookings having either 1 or 2 passengers. However, there are cases with up to 9 passengers.</p></li>
+<li><p>The average <code>purchase lead</code> time is approximately 85 days, indicating that customers typically book flights well in advance of their travel dates. Inferring from the significant difference between the mean and the median(50th percentile) the distribution is positively-skewed. The predictive model will be trained with <code>Random Forest</code> Algorithm so it is important to note that this algorithm is not sensitive to outliers.</p></li>
+<li><p>It’s also interesting to point out that the average <code>length of stay</code> is approximately 23 days, indicating that customers typically stay at their destination for a short period of time. However, the maximum length of stay is 778 days, suggesting some outliers or potentially long-term bookings.</p></li>
+</ol>
+<h4 class="anchored">
+Checking for Missing Values
+</h4>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Check for Nmissing values</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>num_passengers           0
 sales_channel            0
 trip_type                0
@@ -502,46 +568,90 @@ booking_complete         0
 dtype: int64</code></pre>
 </div>
 </div>
-<p>I have used the seaborn library to create some visualizations of the data. I have used a pairplot to show the relationship between the different variables. I have also used a heatmap to show the correlation between the different variables.</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use seaborn to visualize the data</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>, context<span class="op">=</span><span class="st">"notebook"</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>sns.pairplot(df, size<span class="op">=</span><span class="fl">2.5</span>)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># create heatmap to check for correlation</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Select only numeric columns</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>df_numeric <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[np.number])</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute correlation coefficient matrix</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> np.corrcoef(df_numeric.values.T)</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(font_scale<span class="op">=</span><span class="fl">1.5</span>)</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>hm <span class="op">=</span> sns.heatmap(</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    cm,</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    cbar<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    annot<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    square<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    fmt<span class="op">=</span><span class="st">".2f"</span>,</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    annot_kws<span class="op">=</span>{<span class="st">"size"</span>: <span class="dv">15</span>},</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    yticklabels<span class="op">=</span>df.columns,</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    xticklabels<span class="op">=</span>df.columns,</span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/home/simontagbor/.virtualenvs/BA/lib/python3.10/site-packages/seaborn/axisgrid.py:2100: UserWarning: The `size` parameter has been renamed to `height`; please update your code.
-  warnings.warn(msg, UserWarning)</code></pre>
-</div>
+<h3 class="anchored">
+Exploratory Visualizations of the data
+</h3>
+<p>I perfomed further exploratory data analysis using visualizations. I used the following techniques to understand the data:</p>
+<ul class="task-list">
+<li><input type="checkbox" checked="">Univariate Analysis</li>
+<li><input type="checkbox" checked="">Bivariate Analysis</li>
+<li><input type="checkbox" checked="">Multivariate Analysis</li>
+</ul>
+<h4 class="anchored">
+Univariate analysis
+</h4>
+<p>My goal for this initial step was to understand the distribution of each variable in the dataset. I used the following techniques to understand the distribution:</p>
+<ul class="task-list">
+<li><input type="checkbox" checked="">distribution plots</li>
+</ul>
+<p>hopefully, patterns and outliers would emerge from this analysis that would help me understand the data better.</p>
+<ul>
+<li><code>num_passengers</code></li>
+<li><code>purchase_lead</code></li>
+<li><code>flight_day</code></li>
+<li><code>Sales_channel</code></li>
+<li><code>trip_type</code></li>
+</ul>
+<p>I examined the above selected variables in the dataset using distribution plots. The plots below show the distribution of the following variables:</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert numeric weekday to corresponding day names</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>weekday_mapping <span class="op">=</span> {<span class="dv">1</span>: <span class="st">'Mon'</span>, <span class="dv">2</span>: <span class="st">'Tue'</span>, <span class="dv">3</span>: <span class="st">'Wed'</span>, <span class="dv">4</span>: <span class="st">'Thu'</span>, <span class="dv">5</span>: <span class="st">'Fri'</span>, <span class="dv">6</span>: <span class="st">'Sat'</span>, <span class="dv">7</span>: <span class="st">'Sun'</span>}</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'flight_day'</span>] <span class="op">=</span> df[<span class="st">'flight_day'</span>].<span class="bu">map</span>(weekday_mapping)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the grid layout</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>, ncols<span class="op">=</span><span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">10</span>))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Distribution Plots for Selected Variables'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting num_passengers</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'num_passengers'</span>, kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">0</span>])</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of num_passengers'</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Number of Passengers'</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting purchase_lead</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'purchase_lead'</span>, kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'salmon'</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of purchase_lead'</span>)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Purchase Lead Time (days)'</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting flight_day with day labels</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'flight_day'</span>, kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'lightgreen'</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">2</span>])</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_title(<span class="st">'Distribution of flight_day'</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_xlabel(<span class="st">'Flight Day'</span>)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Sales_channel</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'sales_channel'</span>, color<span class="op">=</span><span class="st">'orange'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">0</span>])</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of Sales_channel'</span>)</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Sales Channel'</span>)</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting trip_type</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'trip_type'</span>, color<span class="op">=</span><span class="st">'purple'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of trip_type'</span>)</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Trip Type'</span>)</span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding the treemap for booking_origin (top 10 countries only)</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>top_10_origin_counts <span class="op">=</span> df[<span class="st">'booking_origin'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">2</span>].axis(<span class="st">'off'</span>)  <span class="co"># Turn off axis for treemap</span></span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>squarify.plot(sizes<span class="op">=</span>top_10_origin_counts, label<span class="op">=</span>top_10_origin_counts.index, color<span class="op">=</span>sns.color_palette(<span class="st">"Set3"</span>), ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">2</span>])</span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding title to the treemap</span></span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">2</span>].set_title(<span class="st">'Top 10 Booking Origins - Treemap'</span>)</span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>plt.tight_layout(rect<span class="op">=</span>[<span class="dv">0</span>, <span class="fl">0.03</span>, <span class="dv">1</span>, <span class="fl">0.95</span>])</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plots</span></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-11-output-2.png" class="img-fluid"></p>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-11-output-3.png" class="img-fluid"></p>
+<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
 </div>
 </div>
+<p>Checkpoint. Check back later for more updates.</p>
+<p>last updated: 2024-01-16</p>
 
 </main>
 <!-- /main column -->
