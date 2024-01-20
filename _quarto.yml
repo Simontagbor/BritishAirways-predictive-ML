@@ -1,0 +1,9 @@
+website:
+  navbar:
+    background: primary
+    search: false
+    left:
+      - text: "Home"
+        file: index.html
+      - talks.qmd
+      - about.qmd
