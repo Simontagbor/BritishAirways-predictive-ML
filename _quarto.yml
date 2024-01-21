@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: .
 
 website:
   navbar:
@@ -8,14 +9,14 @@ website:
       - icon: twitter
         href: https://twitter.com
       - icon: github
+        href: https://github.com/Simontagbor
+      - icon: kaggle
+        href: https://www.kaggle.com/simontagbor
         menu:
           - text: Source Code
-            url:  https://code.com
+            url:  https://github.com/Simontagbor/BritishAirways-predictive-ML
           - text: Report a Bug
             url:  https://bugs.com
-    search: false
     left:
-      - text: "Home"
+      - text: "Simon's Notes"
         file: index.ipynb
-      - talks.qmd
-      - about.qmd
