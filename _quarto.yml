@@ -1,4 +1,5 @@
 project:
+  title: "Simon's Notes"
   type: website
   output-dir: .
 
@@ -18,5 +19,20 @@ website:
           - text: Report a Bug
             url:  https://bugs.com
     left:
-      - text: "Simon's Notes"
+      - text: "Projects"
+        url: /index
         file: index.ipynb
+      - text: "About Me"
+        url: /about
+        file: index.ipynb
+      - text: "Contact"
+        url: /contact
+        file: index.ipynb
+
+    page-footer: 
+      left: "Copyright 2024, Simon Tagbor Gabriel" 
+      right: 
+        - icon: github
+          href: https://github.com/Simontagbor
+        - icon: twitter 
+          href: https://twitter.com/@clawd_johan
