@@ -3,6 +3,10 @@ project:
   type: website
   output-dir: .
 
+formats:
+  html:
+    css: style.css
+
 website:
   navbar:
     background: primary
@@ -28,11 +32,10 @@ website:
       - text: "Contact"
         url: /contact
         file: index.ipynb
-
-    page-footer: 
+    toc: true
+    footer:
       left: "Copyright 2024, Simon Tagbor Gabriel" 
       right: 
         - icon: github
           href: https://github.com/Simontagbor
         - icon: twitter 
-          href: https://twitter.com/@clawd_johan
