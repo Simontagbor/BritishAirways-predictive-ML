@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index</title>
+<title>Simon’s Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,6 +106,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Simon’s Notes</span>
+    </a>
+  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -114,7 +119,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Simon’s Notes</span></a>
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Contact</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto tools-wide">
@@ -146,58 +159,123 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 
-<div style="text-align: center;">
-<p><a href="https://github.com/Simontagbor" style="text-decoration: none; color: black; font-size: larger; margin-right: 20px;"> <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="35" style="vertical-align: middle; margin-right: 10px;"> </a> <a href="https://www.kaggle.com/simontagbor" style="text-decoration: none; color: black; font-size: larger;"> <img src="https://www.kaggle.com/static/images/site-logo.png" height="30" style="vertical-align: middle; margin-right: 10px;"> </a></p>
+<div class="column-page">
+<div style="
+    background: url('headerimage.jpg') no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 400px; 
+    display: flex; 
+    align-items: flex-end; 
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;">
+
 </div>
-<div style="text-align: left;">
+</div>
+<div class="column-body-outset">
 <h1 style="color: #00205b; font-family: 'Georgia';">
 How Predictive Models Help British Airways Acquire Customers
 </h1>
-<p style="font-size: small;">
-Author: Simontagbor
-</p>
-<p style="font-size: small;">
-Last updated: 2024-01-20
-</p>
+<p><author style="color: #00205b; font-family: 'Georgia';">By: <a href="https://www./">Simon Tagbor</a></author> <date style="color: #00205b; font-family: 'Georgia';">2024-01-21</date></p>
 </div>
-<hr>
 <blockquote class="blockquote">
-This project is about combating the problem of unstable buying cycle of British Airways customers using the power of predictive modeling. The project was done as part of a job simulation as a Junior Data Scientist at British Airways.
 <p>
-In this Interactive Notebook I will show how I trained a predictive model with Random Forest on 5000 entries for customer booking data from British Airways.
+The Goal of the project is to help British Airwyays understand their customer’s booking behaviour for the holidays by looking at 5000 records of customer fligt booking data. It was part of a job simulation as a Junior Data Scientist at British Airways I built a predictive model on Random Forest Algoritmn to Help British Airways Answer the following Business questions:
 </p>
+<ol style="font-size:18px">
+<li>
+<em>What are the most important varables contribute to customers booking holidays with British Airways?</em>
+</li>
+<li>
+<em>Is it Viable to Use the gievn data to Predict Customers booking holidays with British Airways?</em>
+</li>
+</ol>
 <p>
-The goal is to help British Airways acquire customers before the holidays.
+In this Interactive Notebook I will demonstrate my data science process for building a predictive model based of customer flight booking data.follow along and be free to reach out with comments and feedback on my process.
 </p>
+<p>You can find the source code for this project at my <a href="https://github.com/Simontagbor/BritishAirways-predictive-ML">github page.</a> You can also find the Jupyter notebook and the dataset on my <a href="https://www.kaggle.com/simontagbor/british-airways-predictive-ml">kaggle page</a>.</p>
+</blockquote>
+<details>
+<summary>
+Click to Read Executive Summary on Research Findings
+</summary>
+<blockquote style="
+    font-size: 20px; 
+    color: #333; 
+    padding: 20px; 
+    margin: 20px 0; 
+    border-left: 10px solid #7792f9; 
+    line-height: 1.6; 
+    position: relative; 
+    background: #e9f5ff;" class="blockquote">
+<h2 class="anchored">
+Executive Summary
+</h2>
 <p>
-The project is divided into 4 parts:
+After building and testing the predictive model with 83.5% Accuracy on the given data, we discorvered Answers to the business questions:
 </p>
 <ol>
 <li>
-Exploratory Data Analysis
+The Top Ten(10) Most Important Variables That Contribute to Customers Booking Holidays with British Airways are:
+<ol>
+<li>
+Booking Origins From Malaysia
 </li>
 <li>
-Data Cleaning and Preparation
+Flight Duration
 </li>
 <li>
-Feature Engineering
+Purchase lead
 </li>
 <li>
-Modeling and Evaluation
+Length of stay
+</li>
+<li>
+Flight hour
+</li>
+<li>
+Flight day
+</li>
+<li>
+Flights from Australia
+</li>
+<li>
+Flights from Indonesia
+</li>
+<li>
+Number of passengers per booking
+</li>
+<li>
+Bookings from China
 </li>
 </ol>
-The source code for this project can be found at my <a href="https://github.com/Simontagbor/BritishAirways-predictive-ML">github</a> page.
+</li>
+<li>
+It Is Viable To Use the Given Data to Predict Customers Booking Holidays With British Airways with 83.7% Accuracy
+</li>
+</ol>
+<h3 class="anchored">
+Potential Application of Insights
+</h3>
 <p>
-You can also find the Jupyter notebook and the dataset on my <a href="https://www.kaggle.com/simontagbor/british-airways-predictive-ml">kaggle page</a>.
+With insights from the predictive model, British Airways sales and marketing function can deploy their strategy to <code>flight origins</code> like Malaysia, Australia, Indonesia and China to increase their sales and revenue. They can also experiment with promotional incentives around <code>flight duration</code>, <code>purchase lead</code> and <code>length of stay</code>.
+</p>
+<p>
+Logistics and Supply Chain function can use the predictive model to forecast the demand for flights during holiday seasons based on historical booking patterns. This can enable the team to Adjust inventory levels and allocate resources more efficiently in response to predicted demand.
 </p>
 </blockquote>
-<hr>
+</details>
 <h2 class="anchored">
-Project Overview
+Project Outline
 </h2>
 <p><em>For this project I completed the following tasks:</em></p>
 <ul class="task-list">
@@ -206,7 +284,7 @@ Project Overview
 <li><input type="checkbox" checked="">Performed Feature Engineering.</li>
 <li><input type="checkbox" checked="">Built and Evaluated models.</li>
 <li><input type="checkbox" checked="">Test the model on unseen data.</li>
-<li><input type="checkbox" checked="">Interpret the model results and make predictions.</li>
+<li><input type="checkbox" checked="">Interpret the model results and answer the business questions.</li>
 </ul>
 <h2 class="anchored">
 Project Dependencies
@@ -227,17 +305,32 @@ Project Dependencies
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># data preprocessing</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># visualisation libraries</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for plotting</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> squarify <span class="co"># for tree maps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.over_sampling <span class="im">import</span> SMOTE</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Model Building and Fitting</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Model Evaluation and Tuning</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.experimental <span class="im">import</span> enable_halving_search_cv</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> HalvingGridSearchCV</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> precision_recall_curve, auc</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># visualisation libraries</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for plotting</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> squarify <span class="co"># for tree maps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<h2 class="anchored">
+<h1>
 Exploratory Data Analysis
-</h2>
+</h1>
+<p>
+The working <a href="https://cdn.theforage.com/vinternships/companyassets/tMjbs76F526fF5v3G/L3MQ8f6cYSkfoukmz/1667814300249/customer_booking.csv">dataset</a> contains 5000 entries of customer booking data from British Airways. The data contains 13 features and 1 target variable. The target variable is the booking completion status of the customer.
+</p>
 <p>
 To understand the data, I performed exploratory data analysis. I used the following techniques to understand the data:
 </p>
@@ -245,13 +338,13 @@ To understand the data, I performed exploratory data analysis. I used the follow
 <li><input type="checkbox" checked="">Visual inspection of data.</li>
 <li><input type="checkbox" checked="">Exploratory Data Visualizations.(Univariate, Bivariate and Multivariate analysis)</li>
 </ul>
-<h3 class="anchored">
+<h2 class="anchored">
 Visual Inspection of Data
-</h3>
-<div class="cell" data-execution_count="2">
+</h2>
+<div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"predictive_model_data/customer_booking.csv"</span>, encoding<span class="op">=</span><span class="st">"ISO-8859-1"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="28">
 <div>
 
 
@@ -368,7 +461,7 @@ Visual Inspection of Data
 </div>
 </div>
 <p>The dataframe object has a <code>.head()</code> method that allows us to view a specified number of rows in the dataset. This method came in handy for visual inspection of the dataset and to get a feel of the data.</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve a summarised info about the columns</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -395,7 +488,9 @@ dtypes: float64(1), int64(8), object(5)
 memory usage: 5.3+ MB</code></pre>
 </div>
 </div>
+<p>
 The summary on the columns indicates that there are:
+</p>
 <ul>
 <li>
 <strong>14 unique columns</strong>
@@ -410,7 +505,9 @@ The summary on the columns indicates that there are:
 <strong>Three unique data types (int64, float64 and object)</strong>
 </li>
 </ul>
+<p>
 Here is a more detailed data description, explaining exactly what each column means:
+</p>
 <details>
 <summary>
 Click to expand!
@@ -464,9 +561,9 @@ Click to expand!
 <p>
 In our case the ideal candidate for label encoding is: <code>flight_day</code>. this is because it is currently a nominal variable with no order or hierarchy.
 </p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"flight_day"</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>array(['Sat', 'Wed', 'Thu', 'Mon', 'Sun', 'Tue', 'Fri'], dtype=object)</code></pre>
 </div>
 </div>
@@ -476,7 +573,7 @@ As can be seen the current days of the week have no order or hierarchy.
 <p>
 To encode this variable I will map the days of the week to the following numerical representations:
 </p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mapping <span class="op">=</span> {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Mon"</span>: <span class="dv">1</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tue"</span>: <span class="dv">2</span>,</span>
@@ -490,9 +587,9 @@ To encode this variable I will map the days of the week to the following numeric
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># set the new values</span></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"flight_day"</span>] <span class="op">=</span> df[<span class="st">"flight_day"</span>].<span class="bu">map</span>(mapping)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"flight_day"</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>array([6, 3, 4, 1, 7, 2, 5])</code></pre>
 </div>
 </div>
@@ -500,9 +597,9 @@ To encode this variable I will map the days of the week to the following numeric
 <h3 class="anchored">
 Summary Statistics
 </h3>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="33">
 <div>
 
 
@@ -647,10 +744,10 @@ Further inspection of the data will help us understand the data better.
 <h4 class="anchored">
 Checking for Missing Values
 </h4>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Check for Nmissing values</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>num_passengers           0
 sales_channel            0
 trip_type                0
@@ -668,24 +765,26 @@ booking_complete         0
 dtype: int64</code></pre>
 </div>
 </div>
-<h3 class="anchored">
+<h2 class="anchored">
 Exploratory Visualizations of the data
-</h3>
-<p>I perfomed further exploratory data analysis using visualizations. I used the following techniques to understand the data:</p>
+</h2>
+<p>I perfomed preliminary data analysis to understand the shape and spread of the dataset and to also have a first glance of the relationships between the target variable and the rest of the variables. I used the following techniques to understand the data:</p>
 <ul class="task-list">
 <li><input type="checkbox" checked="">Univariate Analysis</li>
 <li><input type="checkbox" checked="">Bivariate Analysis</li>
-<li><input type="checkbox" checked="">Multivariate Analysis</li>
 </ul>
-<h4 class="anchored">
+<h3 class="anchored">
 Univariate analysis
-</h4>
+</h3>
 <p>My goal for this initial step was to understand the distribution of each variable in the dataset. I used the following techniques to understand the distribution:</p>
 <ul class="task-list">
 <li><input type="checkbox" checked="">distribution plots</li>
+<li><input type="checkbox" checked="">tree maps</li>
+<li><input type="checkbox" checked="">bar plots</li>
 </ul>
 <p>hopefully, patterns and outliers would emerge from this analysis that would help me understand the data better.</p>
 <ul>
+<li><code>booking_complete</code></li>
 <li><code>num_passengers</code></li>
 <li><code>purchase_lead</code></li>
 <li><code>flight_day</code></li>
@@ -693,160 +792,158 @@ Univariate analysis
 <li><code>trip_type</code></li>
 <li><code>booking_origin</code></li>
 <li><code>flight_duration</code></li>
-<li><code>booking_complete</code></li>
 <li><code>route</code></li>
 </ul>
 <p>I examined the above selected variables in the dataset using distribution plots. The plots below show the distribution of the following variables:</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># source code for visualisation can be found </span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># at my Github gist:https://gist.github.com/Simontagbor/643a81b10ed2bd0d8d6542db8ddc53e2 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="36">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert numeric weekday to corresponding day names</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>weekday_mapping <span class="op">=</span> {<span class="dv">1</span>: <span class="st">'Mon'</span>, <span class="dv">2</span>: <span class="st">'Tue'</span>, <span class="dv">3</span>: <span class="st">'Wed'</span>,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                    <span class="dv">4</span>: <span class="st">'Thu'</span>, <span class="dv">5</span>: <span class="st">'Fri'</span>, <span class="dv">6</span>: <span class="st">'Sat'</span>, <span class="dv">7</span>: <span class="st">'Sun'</span>}</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the grid layout</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">3</span>, ncols<span class="op">=</span><span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">15</span>))</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Distribution Plots for Selected Variables'</span>, </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>             fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a copy of the DataFrame</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>df_copy <span class="op">=</span> df.copy()</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the mapping to the copy</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'flight_day'</span>] <span class="op">=</span> df_copy[<span class="st">'flight_day'</span>].<span class="bu">map</span>(weekday_mapping)</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting num_passengers</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'num_passengers'</span>,</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'skyblue'</span>,</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>            ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">0</span>])</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of num_passengers'</span>)</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Number of Passengers'</span>)</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting purchase_lead</span></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'purchase_lead'</span>, </span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'salmon'</span>, </span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>             ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of purchase_lead'</span>)</span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Purchase Lead Time (days)'</span>)</span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting flight_day with day labels</span></span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'flight_day'</span>,</span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>            kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'lightgreen'</span>, </span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>            ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">2</span>])</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_title(<span class="st">'Distribution of flight_day'</span>)</span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_xlabel(<span class="st">'Flight Day'</span>)</span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Sales_channel</span></span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'sales_channel'</span>,</span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'orange'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">0</span>])</span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of Sales_channel'</span>)</span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Sales Channel'</span>)</span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Count'</span>)</span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting trip_type</span></span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'trip_type'</span>,</span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'purple'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">1</span>])</span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of trip_type'</span>)</span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Trip Type'</span>)</span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Count'</span>)</span>
-<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding the treemap for booking_origin (top 10 countries only)</span></span>
-<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>top_10_origin_counts <span class="op">=</span> df_copy[<span class="st">'booking_origin'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
-<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">2</span>].axis(<span class="st">'off'</span>)  <span class="co"># Turn off axis for treemap</span></span>
-<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>squarify.plot(sizes<span class="op">=</span>top_10_origin_counts, </span>
-<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>              label<span class="op">=</span>top_10_origin_counts.index, </span>
-<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>              color<span class="op">=</span>sns.color_palette(<span class="st">"Set3"</span>), ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">2</span>])</span>
-<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding title to the treemap</span></span>
-<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">2</span>].set_title(<span class="st">'Top 10 Booking Origins - Treemap'</span>)</span>
-<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting flight_duration</span></span>
-<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'flight_duration'</span>, </span>
-<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, </span>
-<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>             ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">0</span>])</span>
-<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of flight_duration'</span>)</span>
-<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Flight Duration'</span>)</span>
-<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting booking_complete</span></span>
-<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'booking_complete'</span>,</span>
-<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'olive'</span>,</span>
-<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>             ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">1</span>])</span>
-<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of booking_complete'</span>)</span>
-<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Booking Complete'</span>)</span>
-<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting route</span></span>
-<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the top 10 routes</span></span>
-<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>top_10_routes <span class="op">=</span> df_copy[<span class="st">'route'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
-<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting route</span></span>
-<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">2</span>].axis(<span class="st">'off'</span>)  <span class="co"># Turn off axis for treemap</span></span>
-<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a>squarify.plot(sizes<span class="op">=</span>top_10_routes, </span>
-<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>              label<span class="op">=</span>top_10_routes.index, </span>
-<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>              color<span class="op">=</span>sns.color_palette(<span class="st">"Set3"</span>),</span>
-<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a>              ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">2</span>])</span>
-<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">2</span>].set_title(<span class="st">'Top 10 Routes - Treemap'</span>)</span>
-<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
-<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a>plt.tight_layout(rect<span class="op">=</span>[<span class="dv">0</span>, <span class="fl">0.03</span>, <span class="dv">1</span>, <span class="fl">0.95</span>])</span>
-<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plots</span></span>
-<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting flight_day with day labels</span></span>
-<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'flight_day'</span>,</span>
-<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a>            kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'lightgreen'</span>, </span>
-<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a>            ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">2</span>])</span>
-<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_title(<span class="st">'Distribution of flight_day'</span>)</span>
-<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_xlabel(<span class="st">'Flight Day'</span>)</span>
-<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Sales_channel</span></span>
-<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'sales_channel'</span>,</span>
-<span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'orange'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">0</span>])</span>
-<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of Sales_channel'</span>)</span>
-<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Sales Channel'</span>)</span>
-<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Count'</span>)</span>
-<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting trip_type</span></span>
-<span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'trip_type'</span>,</span>
-<span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'purple'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">1</span>])</span>
-<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of trip_type'</span>)</span>
-<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Trip Type'</span>)</span>
-<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Count'</span>)</span>
-<span id="cb14-101"><a href="#cb14-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding the treemap for booking_origin (top 10 countries only)</span></span>
-<span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a>top_10_origin_counts <span class="op">=</span> df_copy[<span class="st">'booking_origin'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
-<span id="cb14-104"><a href="#cb14-104" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">2</span>].axis(<span class="st">'off'</span>)  <span class="co"># Turn off axis for treemap</span></span>
-<span id="cb14-105"><a href="#cb14-105" aria-hidden="true" tabindex="-1"></a>squarify.plot(sizes<span class="op">=</span>top_10_origin_counts, </span>
-<span id="cb14-106"><a href="#cb14-106" aria-hidden="true" tabindex="-1"></a>              label<span class="op">=</span>top_10_origin_counts.index, </span>
-<span id="cb14-107"><a href="#cb14-107" aria-hidden="true" tabindex="-1"></a>              color<span class="op">=</span>sns.color_palette(<span class="st">"Set3"</span>), ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">2</span>])</span>
-<span id="cb14-108"><a href="#cb14-108" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding title to the treemap</span></span>
-<span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">2</span>].set_title(<span class="st">'Top 10 Booking Origins - Treemap'</span>)</span>
-<span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting flight_duration</span></span>
-<span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'flight_duration'</span>, </span>
-<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, </span>
-<span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a>             ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">0</span>])</span>
-<span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of flight_duration'</span>)</span>
-<span id="cb14-115"><a href="#cb14-115" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Flight Duration'</span>)</span>
-<span id="cb14-116"><a href="#cb14-116" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb14-117"><a href="#cb14-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-118"><a href="#cb14-118" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting booking_complete</span></span>
-<span id="cb14-119"><a href="#cb14-119" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'booking_complete'</span>,</span>
-<span id="cb14-120"><a href="#cb14-120" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'olive'</span>,</span>
-<span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a>             ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">1</span>])</span>
-<span id="cb14-122"><a href="#cb14-122" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of booking_complete'</span>)</span>
-<span id="cb14-123"><a href="#cb14-123" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Booking Complete'</span>)</span>
-<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
-<span id="cb14-125"><a href="#cb14-125" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting route</span></span>
-<span id="cb14-126"><a href="#cb14-126" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the top 10 routes</span></span>
-<span id="cb14-127"><a href="#cb14-127" aria-hidden="true" tabindex="-1"></a>top_10_routes <span class="op">=</span> df_copy[<span class="st">'route'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
-<span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting route</span></span>
-<span id="cb14-129"><a href="#cb14-129" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">2</span>].axis(<span class="st">'off'</span>)  <span class="co"># Turn off axis for treemap</span></span>
-<span id="cb14-130"><a href="#cb14-130" aria-hidden="true" tabindex="-1"></a>squarify.plot(sizes<span class="op">=</span>top_10_routes, </span>
-<span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a>              label<span class="op">=</span>top_10_routes.index, </span>
-<span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a>              color<span class="op">=</span>sns.color_palette(<span class="st">"Set3"</span>),</span>
-<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a>              ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">2</span>])</span>
-<span id="cb14-134"><a href="#cb14-134" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">2</span>].set_title(<span class="st">'Top 10 Routes - Treemap'</span>)</span>
-<span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
-<span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a>plt.tight_layout(rect<span class="op">=</span>[<span class="dv">0</span>, <span class="fl">0.03</span>, <span class="dv">1</span>, <span class="fl">0.95</span>])</span>
-<span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plots</span></span>
-<span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert numeric weekday to corresponding day names</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>weekday_mapping <span class="op">=</span> {<span class="dv">1</span>: <span class="st">'Mon'</span>, <span class="dv">2</span>: <span class="st">'Tue'</span>, <span class="dv">3</span>: <span class="st">'Wed'</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                    <span class="dv">4</span>: <span class="st">'Thu'</span>, <span class="dv">5</span>: <span class="st">'Fri'</span>, <span class="dv">6</span>: <span class="st">'Sat'</span>, <span class="dv">7</span>: <span class="st">'Sun'</span>}</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the grid layout</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">3</span>, ncols<span class="op">=</span><span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">15</span>))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Distribution Plots for Selected Variables'</span>, </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>             fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a copy of the DataFrame</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>df_copy <span class="op">=</span> df.copy()</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the mapping to the copy</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'flight_day'</span>] <span class="op">=</span> df_copy[<span class="st">'flight_day'</span>].<span class="bu">map</span>(weekday_mapping)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting booking_complete</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'booking_complete'</span>,</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'olive'</span>,</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>             ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">0</span>])</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of booking_complete'</span>)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Booking Complete'</span>)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting num_passengers</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'num_passengers'</span>,</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'skyblue'</span>,</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>            ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">1</span>])</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of num_passengers'</span>)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Number of Passengers'</span>)</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting purchase_lead</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'purchase_lead'</span>, </span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'salmon'</span>, </span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>             ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of purchase_lead'</span>)</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Purchase Lead Time (days)'</span>)</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting flight_day with day labels</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'flight_day'</span>,</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>            kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'lightgreen'</span>, </span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>            ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">2</span>])</span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_title(<span class="st">'Distribution of flight_day'</span>)</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_xlabel(<span class="st">'Flight Day'</span>)</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Sales_channel</span></span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'sales_channel'</span>,</span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'orange'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">0</span>])</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of Sales_channel'</span>)</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Sales Channel'</span>)</span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting trip_type</span></span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'trip_type'</span>,</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'purple'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of trip_type'</span>)</span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Trip Type'</span>)</span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding the treemap for booking_origin (top 10 countries only)</span></span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>top_10_origin_counts <span class="op">=</span> df_copy[<span class="st">'booking_origin'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">2</span>].axis(<span class="st">'off'</span>)  <span class="co"># Turn off axis for treemap</span></span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>squarify.plot(sizes<span class="op">=</span>top_10_origin_counts, </span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>              label<span class="op">=</span>top_10_origin_counts.index, </span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>              color<span class="op">=</span>sns.color_palette(<span class="st">"Set3"</span>), ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">2</span>])</span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding title to the treemap</span></span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">2</span>].set_title(<span class="st">'Top 10 Booking Origins - Treemap'</span>)</span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting flight_duration</span></span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'flight_duration'</span>, </span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, </span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>             ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">0</span>])</span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of flight_duration'</span>)</span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Flight Duration'</span>)</span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting booking_complete</span></span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'booking_complete'</span>,</span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'olive'</span>,</span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>             ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">1</span>])</span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of booking_complete'</span>)</span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Booking Complete'</span>)</span>
+<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting route</span></span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the top 10 routes</span></span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a>top_10_routes <span class="op">=</span> df_copy[<span class="st">'route'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
+<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting route</span></span>
+<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">2</span>].axis(<span class="st">'off'</span>)  <span class="co"># Turn off axis for treemap</span></span>
+<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a>squarify.plot(sizes<span class="op">=</span>top_10_routes, </span>
+<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a>              label<span class="op">=</span>top_10_routes.index, </span>
+<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a>              color<span class="op">=</span>sns.color_palette(<span class="st">"Set3"</span>),</span>
+<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a>              ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">2</span>])</span>
+<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">2</span>].set_title(<span class="st">'Top 10 Routes - Treemap'</span>)</span>
+<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
+<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a>plt.tight_layout(rect<span class="op">=</span>[<span class="dv">0</span>, <span class="fl">0.03</span>, <span class="dv">1</span>, <span class="fl">0.95</span>])</span>
+<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plots</span></span>
+<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting flight_day with day labels</span></span>
+<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'flight_day'</span>,</span>
+<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>            kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'lightgreen'</span>, </span>
+<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a>            ax<span class="op">=</span>axes[<span class="dv">0</span>, <span class="dv">2</span>])</span>
+<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_title(<span class="st">'Distribution of flight_day'</span>)</span>
+<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_xlabel(<span class="st">'Flight Day'</span>)</span>
+<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>, <span class="dv">2</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Sales_channel</span></span>
+<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'sales_channel'</span>,</span>
+<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'orange'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">0</span>])</span>
+<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of Sales_channel'</span>)</span>
+<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Sales Channel'</span>)</span>
+<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting trip_type</span></span>
+<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'trip_type'</span>,</span>
+<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">'purple'</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_title(<span class="st">'Distribution of trip_type'</span>)</span>
+<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_xlabel(<span class="st">'Trip Type'</span>)</span>
+<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">1</span>].set_ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding the treemap for booking_origin (top 10 countries only)</span></span>
+<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a>top_10_origin_counts <span class="op">=</span> df_copy[<span class="st">'booking_origin'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
+<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">2</span>].axis(<span class="st">'off'</span>)  <span class="co"># Turn off axis for treemap</span></span>
+<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a>squarify.plot(sizes<span class="op">=</span>top_10_origin_counts, </span>
+<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a>              label<span class="op">=</span>top_10_origin_counts.index, </span>
+<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a>              color<span class="op">=</span>sns.color_palette(<span class="st">"Set3"</span>), ax<span class="op">=</span>axes[<span class="dv">1</span>, <span class="dv">2</span>])</span>
+<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding title to the treemap</span></span>
+<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>, <span class="dv">2</span>].set_title(<span class="st">'Top 10 Booking Origins - Treemap'</span>)</span>
+<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting flight_duration</span></span>
+<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df_copy, x<span class="op">=</span><span class="st">'flight_duration'</span>, </span>
+<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a>             kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, </span>
+<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>             ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">0</span>])</span>
+<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_title(<span class="st">'Distribution of flight_duration'</span>)</span>
+<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_xlabel(<span class="st">'Flight Duration'</span>)</span>
+<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">0</span>].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting route</span></span>
+<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the top 10 routes</span></span>
+<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a>top_10_routes <span class="op">=</span> df_copy[<span class="st">'route'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
+<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting route</span></span>
+<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">2</span>].axis(<span class="st">'off'</span>)  <span class="co"># Turn off axis for treemap</span></span>
+<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a>squarify.plot(sizes<span class="op">=</span>top_10_routes, </span>
+<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a>              label<span class="op">=</span>top_10_routes.index, </span>
+<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a>              color<span class="op">=</span>sns.color_palette(<span class="st">"Set3"</span>),</span>
+<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a>              ax<span class="op">=</span>axes[<span class="dv">2</span>, <span class="dv">2</span>])</span>
+<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>, <span class="dv">2</span>].set_title(<span class="st">'Top 10 Routes - Treemap'</span>)</span>
+<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout</span></span>
+<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a>plt.tight_layout(rect<span class="op">=</span>[<span class="dv">0</span>, <span class="fl">0.03</span>, <span class="dv">1</span>, <span class="fl">0.95</span>])</span>
+<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plots</span></span>
+<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
 </div>
 <div class="cell-output cell-output-display">
 <pre><code>&lt;Figure size 640x480 with 0 Axes&gt;</code></pre>
@@ -856,7 +953,11 @@ Univariate analysis
 <summary>
 Click to Read My Observations!
 </summary>
-<p>The Univariate analysis revealed the following insights: the distribution of <code>num_passengers</code> is positively skewed with a long tail. This indicates that the majority of bookings involve a small number of passengers.</p>
+<p>
+The Univariate analysis revealed the following insights:
+</p>
+<p>Majority of <code>booking_complete</code> is 0 indicating that the majority of customers do not complete the booking. This is a very interesting insight because it introduces the challenge of class imbalance during model training.</p>
+<p>the distribution of <code>num_passengers</code> is positively skewed with a long tail. This indicates that the majority of bookings involve a small number of passengers.</p>
 <p>The distribution of <code>purchase_lead</code> is positively skewed with a long tail. This means that most passengers book their flights well in advance of their travel dates.for the purposes of predicting buying behaviour it informs my hypothesis that the longer the purchase lead time the more likely the customer to not complete the booking.</p>
 <p>The distribution of <code>flight_day</code> is uniform. This means that the bookings are evenly distributed across the days of the week. This is an interesting insight because it may suggest that the day of the week does not have a significant impact on the buying behaviour of customers.</p>
 <p>The distribution of <code>sales_channel</code> is skewed to the right. This means that the majority of bookings are made through the online channel. The right skewness indicates that there might be a long tail of other channels, but they are less frequent.</p>
@@ -864,25 +965,26 @@ Click to Read My Observations!
 <p>The majority of <code>flight_origins</code> are from Australia, while there are relatively even distributions among the remaining origins. This observation may suggest a low correlation between flight origin and buying behavior. However, further bivariate analysis will be conducted to confirm this hypothesis.</p>
 <p>Similarly the majority of <code>route</code> is AKLKUL indicating that the majority of customers book flights from Auckland to Kuala Lumpur. This is a very interesting insight because it suggests that there is a significant number of customers who book flights from Auckland to Kuala Lumpur.</p>
 <p>The distribution of <code>flight_duration</code> is quite skewed to the left. This means that a significant number of flights are short-haul flights. This observation may suggest a low correlation between flight duration and buying behavior. However, further bivariate analysis will be conducted to confirm this hypothesis.</p>
-Majority of <code>booking_complete</code> is 0 indicating that the majority of customers do not complete the booking. This is a very interesting insight because it suggests that there is a significant number of customers who do not complete the booking.
 </details>
-<h4 class="anchored">
-Bivariate analysis Using Heat Maps
-</h4>
+<h2 class="anchored">
+Bivariate Analysis Using Heat Maps
+</h2>
 <p>My goal for this step was to understand the relationship between each variable and the target variable. For the purposes of this project, the target variable is <code>booking_complete</code>. Considering that there are 14 variables I decided to use heatmaps to visualize the correlation between each variable and the target variable.</p>
 <p>I chose the heatmap because it allowed me to visualize the correlation between each variable and the target variable in one plot. This is a very efficient way to visualize the correlation between variables.</p>
 <p>Before the Bivariate analysis, I Had some hypotheses about the relationship between the variables and the target variable. The hypotheses were as follows:</p>
 <ul class="task-list">
-<li><input type="checkbox" checked="">The longer the <code>purchase_lead</code> time the more likely the customer to not complete the booking.</li>
-<li><input type="checkbox" checked="">The <code>flight_day</code> does not have a significant impact on the buying behaviour of customers.</li>
-<li><input type="checkbox" checked="">The <code>trip_type</code> does not have a significant impact on the buying behaviour of customers.</li>
-<li><input type="checkbox" checked="">The <code>flight_origin</code> does not have a significant impact on the buying behaviour of customers.</li>
-<li><input type="checkbox" checked="">the <code>sales_channel</code> may have a significant impact on the buying behaviour of customers.</li>
+<li><p><input type="checkbox" checked="">The <code>purchase_lead</code> has an impact on customer booking completion.</p></li>
+<li><p><input type="checkbox" checked="">The <code>flight_day</code> does not have a significant impact on the buying behaviour of customers.</p></li>
+<li><p><input type="checkbox" checked="">The <code>trip_type</code> does not have a significant impact on the buying behaviour of customers.</p></li>
+<li><p><input type="checkbox" checked="">The <code>flight_origin</code> does not have a significant impact on the buying behaviour of customers.</p></li>
+<li><p><input type="checkbox" checked="">the <code>sales_channel</code> may have a significant impact on the buying behaviour of customers.</p></li>
 </ul>
-<h5 class="anchored">
+<h3 class="anchored">
 Preprocessing the data for Bivariate analysis
-</h5>
+</h3>
+<p>
 Some of the variables in the dataset are categorical variables that have no inherent order.The correalation matrix which will be used for analysis requires all variables to have numerical representations. Hence the need to label encode the remaining nominal variables:
+</p>
 <p>
 To perform bivariate analysis on these variables I need to convert them to numerical representations using one-hot encoding. I used the pandas <code>get_dummies()</code> method to perform one-hot encoding on the following variables:
 </p>
@@ -903,19 +1005,19 @@ To perform bivariate analysis on these variables I need to convert them to numer
 <div class="cell" data-execution_count="11">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># label encoding</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>label_encoder <span class="op">=</span> LabelEncoder()</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply label encoding to categorical variables</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'booking_origin'</span>] <span class="op">=</span> label_encoder.fit_transform(df_copy[<span class="st">'booking_origin'</span>])</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'route'</span>] <span class="op">=</span> label_encoder.fit_transform(df_copy[<span class="st">'route'</span>])</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'sales_channel'</span>] <span class="op">=</span> label_encoder.fit_transform(df_copy[<span class="st">'sales_channel'</span>])</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'trip_type'</span>] <span class="op">=</span> label_encoder.fit_transform(df_copy[<span class="st">'trip_type'</span>])</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'flight_day'</span>] <span class="op">=</span> label_encoder.fit_transform(df_copy[<span class="st">'flight_day'</span>])</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>df_copy.head()</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co"># check the data types</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># label encoding</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>label_encoder <span class="op">=</span> LabelEncoder()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply label encoding to categorical variables</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'booking_origin'</span>] <span class="op">=</span> label_encoder.fit_transform(df_copy[<span class="st">'booking_origin'</span>])</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'route'</span>] <span class="op">=</span> label_encoder.fit_transform(df_copy[<span class="st">'route'</span>])</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'sales_channel'</span>] <span class="op">=</span> label_encoder.fit_transform(df_copy[<span class="st">'sales_channel'</span>])</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'trip_type'</span>] <span class="op">=</span> label_encoder.fit_transform(df_copy[<span class="st">'trip_type'</span>])</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>df_copy[<span class="st">'flight_day'</span>] <span class="op">=</span> label_encoder.fit_transform(df_copy[<span class="st">'flight_day'</span>])</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>df_copy.head()</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co"># check the data types</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>num_passengers             int64
@@ -937,21 +1039,21 @@ dtype: object</code></pre>
 </div>
 <p>Now that the categorical variables have been successfully encoded. I can proceed to perform bivariate analysis.</p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># perform Bivariate analysis using heatmap</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(df_copy.corr(), annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Matrix of 14 Variables on customer booking behaviour'</span>,</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>           fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># perform Bivariate analysis using heatmap</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(df_copy.corr(), annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Matrix of 14 Variables on customer booking behaviour'</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>           fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
+<p><img src="index_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<h5 class="anchored">
-My Observations of Relationship between Booking Completions and 13 Other Variables
-</h5>
+<h3 class="anchored">
+My Observations
+</h3>
 <details>
 <summary>
 Click to Read Detailed Observations!
@@ -1018,18 +1120,18 @@ Click to Read Detailed Observations!
 In summary, analysis of the heat map reveals key correlations with booking completions. Notably, specific booking origins play a significant role (correlation coefficient of 0.13), while longer flight durations show a negative correlation (-0.11) with completion likelihood. Surprisingly, the desire for extra baggage positively contributes (correlation coefficient of 0.068), while length of stay exhibits a modest reverse relationship (-0.042). Customer preferences for inflight meals and certain trip types positively influence completion likelihood. These findings provide valuable insights for further exploration and feature engineering in predictive modeling efforts.
 </p>
 </summary>
-<h2 class="anchored">
+<h1>
 Modeling With Random Forest
-</h2>
+</h1>
 <p>
 To build a predictive model to predict the likelihood of booking completions, I used the <a href="https://www.ibm.com/topics/random-forest#:~:text=Random%20forest%20is%20a%20commonly,both%20classification%20and%20regression%20problems.">Random Forest</a> algorithm. I chose Random Forest Algorithm because of it’s ensemble approach to learning to predict the relationships between the variables and the target variable. It’s like having multiple experts(decision trees) in the room to help you make a decision.
 </p>
 <p>
 The Random Forest algorithm is also very robust to outliers and noise in the data. This is a very important feature because the dataset has some outliers and noise which refers to a random error or variance in a measured variable.
 </p>
-<h4 class="anchored">
-Preprocessing the data for predictive modeling
-</h4>
+<h2 class="anchored">
+Preprocessing The Data for Predictive Modeling
+</h2>
 <p>
 Before proceeding to training the model:
 </p>
@@ -1055,30 +1157,32 @@ One-hot encode the categorical variables:
 Split the data into training and testing datasets.
 </li>
 </ul>
-<h5 class="anchored">
+<h3 class="anchored">
 One Hot Encoding Booking Data
-</h5>
+</h3>
+<p>
 Some of the variables in the dataset are categorical variables that have no inherent order. Hence the need to label encode the remaining nominal variables:
+</p>
 <p>
 I needed to convert them to numerical representations using one-hot encoding. I used the pandas <code>get_dummies()</code> method to perform one-hot encoding on the selected variables:
 </p>
 <div class="cell" data-execution_count="13">
 <details>
 <summary>Show Label Encoding code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># label encode the categorical variables</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># One-Hot Encode Nominal Variables</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.get_dummies(df, columns<span class="op">=</span>[<span class="st">'sales_channel'</span>, </span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">'trip_type'</span>, </span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">'booking_origin'</span>, </span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">'route'</span>], </span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                    drop_first<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># label encode the categorical variables</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># One-Hot Encode Nominal Variables</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.get_dummies(df, columns<span class="op">=</span>[<span class="st">'sales_channel'</span>, </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">'trip_type'</span>, </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">'booking_origin'</span>, </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">'route'</span>], </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                    drop_first<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>According to the pandas documentation, the <code>get_dummies()</code> method converts categorical variables into dummy/indicator variables. This means that each categorical variable will be converted into a numerical representation. The numerical representation will be in the form of a binary vector with a 1 representing the presence of a category and a 0 representing the absence of a category.</p>
 <p>let’s comfirm that the categorical variables have been successfully encoded.</p>
 <div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
@@ -1238,20 +1342,22 @@ I needed to convert them to numerical representations using one-hot encoding. I 
 </div>
 </div>
 </div>
-<h5 class="anchored">
+<h3 class="anchored">
 Split Data for Training and Testing
-</h5>
-<p>the next step is to split the data into training and testing datasets. I used the <code>train_test_split()</code> method from the <code>sklearn.model_selection</code> module to split the data into training and testing datasets. The <code>train_test_split()</code> method takes the following arguments:</p>
+</h3>
+<p>
+The next step is to split the data into training and testing datasets. I used the <code>train_test_split()</code> method from the <code>sklearn.model_selection</code> module to split the data into training and testing datasets. Doing so will allow me to train the model on the training dataset and test the model on the testing dataset.
+</p>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(<span class="st">'booking_complete'</span>, axis<span class="op">=</span><span class="dv">1</span>)  <span class="co"># Features (excluding the target variable)</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">'booking_complete'</span>]  <span class="co"># Target variable</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Stratify the split to ensure that the proportion of the target variable is the same in both sets</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>y</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(<span class="st">'booking_complete'</span>, axis<span class="op">=</span><span class="dv">1</span>)  <span class="co"># Features (excluding the target variable)</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">'booking_complete'</span>]  <span class="co"># Target variable</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Stratify the split to ensure that the proportion of the target variable is the same in both sets</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>y</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>X</code>: the features to be used for training the model. In this case, the features are all the columns in the dataset except the target variable <code>booking_complete</code>.</p>
 <p><code>y</code>: the target variable to be predicted. In this case, the target variable is <code>booking_complete</code>.</p>
@@ -1260,9 +1366,9 @@ Split Data for Training and Testing
 <p><code>y_train</code>: the target variable to be used for training the model.</p>
 <p><code>y_test</code>: the target variable to be used for testing the model.</p>
 <p><code>stratify</code>: this argument is set to <code>y</code> to ensure that the proportion of the target variable is the same in both the training and testing datasets. I noticed a significant imbalance in the target variable, so it was important to ensure that the imbalance was reflected in both the training and testing datasets.</p>
-<h3 class="anchored">
+<h2 class="anchored">
 Training the Model
-</h3>
+</h2>
 <p>
 Now that the data has been successfully preprocessed, I can proceed to train the model. I used the <code>RandomForestClassifier()</code> class from the <code>sklearn.ensemble</code> module to train the model. The <code>RandomForestClassifier()</code> method takes the following arguments:
 </p>
@@ -1278,50 +1384,50 @@ Now that the data has been successfully preprocessed, I can proceed to train the
 </li>
 </ul>
 <div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>n_estimators <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>max_depth <span class="op">=</span> <span class="va">None</span>  <span class="co"># or a specific value</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>min_samples_split <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>min_samples_leaf <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>max_features <span class="op">=</span> <span class="va">None</span>  <span class="co"># or another value like 'sqrt' or 'log2'</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the RandomForestClassifier instance</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>rf_model <span class="op">=</span> RandomForestClassifier(</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    n_estimators<span class="op">=</span>n_estimators,</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    max_depth<span class="op">=</span>max_depth,</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    min_samples_split<span class="op">=</span>min_samples_split,</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    min_samples_leaf<span class="op">=</span>min_samples_leaf,</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    max_features<span class="op">=</span>max_features,  <span class="co"># Change 'auto' to None</span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    random_state<span class="op">=</span><span class="dv">42</span>  <span class="co"># You can set a random state for reproducibility</span></span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the model to the training data</span></span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>rf_model.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>n_estimators <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>max_depth <span class="op">=</span> <span class="va">None</span>  <span class="co"># or a specific value</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>min_samples_split <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>min_samples_leaf <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>max_features <span class="op">=</span> <span class="va">None</span>  <span class="co"># or another value like 'sqrt' or 'log2'</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the RandomForestClassifier instance</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>rf_model <span class="op">=</span> RandomForestClassifier(</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    n_estimators<span class="op">=</span>n_estimators,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    max_depth<span class="op">=</span>max_depth,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    min_samples_split<span class="op">=</span>min_samples_split,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    min_samples_leaf<span class="op">=</span>min_samples_leaf,</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    max_features<span class="op">=</span>max_features,  <span class="co"># Change 'auto' to None</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    random_state<span class="op">=</span><span class="dv">42</span>  <span class="co"># You can set a random state for reproducibility</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the model to the training data</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>rf_model.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <style>#sk-container-id-1 {color: black;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RandomForestClassifier(max_features=None, random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(max_features=None, random_state=42)</pre></div></div></div></div></div>
 </div>
 </div>
-<h3 class="anchored">
+<h1>
 Evaluating the Model
-</h3>
+</h1>
 <p>
 Now that the model has been trained, I can proceed to evaluate the model. I used the <code>accuracy_score()</code> <code>classification_report()</code>, <code>confusion_matrix()</code>methods to evaluate the model.
 </p>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the test set</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> classification_report(y_test, y_pred)</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>confusion_mat <span class="op">=</span> confusion_matrix(y_test, y_pred)</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Classification Report:</span><span class="ch">\n</span><span class="st">"</span>, report)</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Confusion Matrix:</span><span class="ch">\n</span><span class="st">"</span>, confusion_mat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the test set</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> classification_report(y_test, y_pred)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>confusion_mat <span class="op">=</span> confusion_matrix(y_test, y_pred)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Classification Report:</span><span class="ch">\n</span><span class="st">"</span>, report)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Confusion Matrix:</span><span class="ch">\n</span><span class="st">"</span>, confusion_mat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Accuracy: 0.8473
 Classification Report:
@@ -1339,9 +1445,9 @@ Confusion Matrix:
  [1250  246]]</code></pre>
 </div>
 </div>
-<h4 class="anchored">
+<h2 class="anchored">
 Accuracy Score
-</h4>
+</h2>
 <p>
 Based on the test results:
 </p>
@@ -1362,9 +1468,9 @@ The class 1 recall is particularly low (0.18), indicating that the model is not 
 <p>
 The reason for this is the class imbalance, recall that from the univariate analysis the majority of <code>booking_complete</code> is 0 indicating that the majority of customers do not complete the booking. The model is biased towards predicting 0 because of the class imbalance. This is a very important insight because it informs the next steps in the project.
 </p>
-<h3 class="anchored">
+<h2 class="anchored">
 Improving the Model
-</h3>
+</h2>
 <p>
 Now that I have a baseline model, I can proceed to improve the model. I used the following techniques to improve the model:
 </p>
@@ -1372,44 +1478,44 @@ Now that I have a baseline model, I can proceed to improve the model. I used the
 <li><input type="checkbox" checked="">Resolving the class imbalance.</li>
 <li><input type="checkbox" checked="">Hyperparameter tuning.</li>
 </ul>
-<h4 class="anchored">
+<h3 class="anchored">
 Resolving the Class Imbalance
-</h4>
+</h3>
 <p>
 I implemented oversampling the class 1(booking complete) using the Synthetic Minority Over-sampling Technique (SMOTE), which is a popular technique for oversampling imbalanced datasets. I used the <code>SMOTE()</code> method from the <code>imblearn.over_sampling</code> module to oversample the minority class.
 </p>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply SMOTE to the training set</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.over_sampling <span class="im">import</span> SMOTE</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>smote <span class="op">=</span> SMOTE(random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>X_resampled, y_resampled <span class="op">=</span> smote.fit_resample(X_train, y_train)</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and train the RandomForestClassifier on the resampled data</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>rf_model <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">100</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>rf_model.fit(X_resampled, y_resampled)</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the test set</span></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply SMOTE to the training set</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.over_sampling <span class="im">import</span> SMOTE</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>smote <span class="op">=</span> SMOTE(random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>X_resampled, y_resampled <span class="op">=</span> smote.fit_resample(X_train, y_train)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and train the RandomForestClassifier on the resampled data</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>rf_model <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">100</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>rf_model.fit(X_resampled, y_resampled)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the test set</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<h4 class="anchored">
+<h2 class="anchored">
 Re-Evaluating the Model
-</h4>
+</h2>
 <p>
 Now that the model has been trained with oversampled data, I can proceed to re-evaluate the model. I used the <code>accuracy_score()</code> <code>classification_report()</code> and <code>confusion_matrix()</code> methods to evaluate the model.
 </p>
 <div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> classification_report(y_test, y_pred)</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>confusion_mat <span class="op">=</span> confusion_matrix(y_test, y_pred)</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Classification Report:</span><span class="ch">\n</span><span class="st">"</span>, report)</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Confusion Matrix:</span><span class="ch">\n</span><span class="st">"</span>, confusion_mat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> classification_report(y_test, y_pred)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>confusion_mat <span class="op">=</span> confusion_matrix(y_test, y_pred)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Classification Report:</span><span class="ch">\n</span><span class="st">"</span>, report)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Confusion Matrix:</span><span class="ch">\n</span><span class="st">"</span>, confusion_mat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Accuracy: 0.8373
 Classification Report:
@@ -1441,9 +1547,9 @@ The precision for class 1 has improved from <code>0.47</code> to <code>0.42</cod
 The recall for class 1 has increased from <code>0.16</code> to <code>0.22</code>, indicating an improvement in capturing actual positive instances of booking completions
 </li>
 <p></p>
-<h4 class="anchored">
+<h2 class="anchored">
 Improving Overall Accuracy With Hyperparameter Tuning
-</h4>
+</h2>
 <p>
 Now that the model has been trained with oversampled data, I can proceed to improve the model. I used the following techniques to improve the model with hyperparemeter Tuning
 </p>
@@ -1451,46 +1557,282 @@ Now that the model has been trained with oversampled data, I can proceed to impr
 <a href="https://en.wikipedia.org/wiki/Hyperparameter_optimization">Hyperparameter tuning</a> is the process of finding the best combination of hyperparameters for a machine learning algorithm that results in the best performance. Hyperparameters are variables that are set before training a model. They control the learning process and the resulting model.
 </p>
 <p>
-The Random Forest algorithm has several hyperparameters that can be tuned to improve the model’s performance. I used the <code>GridSearchCV()</code> method from the <code>sklearn.model_selection</code> module to tune the hyperparameters. The <code>GridSearchCV()</code> method takes the following arguments:
+The Random Forest algorithm has several hyperparameters that can be tuned to improve the model’s performance. I used the <code>HalvingGridSearchCV()</code> method from the <code>sklearn.model_selection</code> module to tune the hyperparameters. I opted for the HalvingGridsearch method because it’s relatively faster compared to the traditional GridSearch method
 </p>
 <div class="cell" data-execution_count="21">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.experimental <span class="im">import</span> enable_halving_search_cv  <span class="co"># noqa</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> HalvingGridSearchCV</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the parameter grid to search</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>param_grid <span class="op">=</span> {</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'n_estimators'</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>],</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'max_depth'</span>: [<span class="va">None</span>, <span class="dv">10</span>, <span class="dv">20</span>],</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'min_samples_split'</span>: [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>],</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'min_samples_leaf'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'max_features'</span>: [<span class="st">'sqrt'</span>, <span class="st">'log2'</span>]</span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a RandomForestClassifier</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>rf_model <span class="op">=</span> RandomForestClassifier(random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Create HalvingGridSearchCV object</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>halving_search <span class="op">=</span> HalvingGridSearchCV(</span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    estimator<span class="op">=</span>rf_model, param_grid<span class="op">=</span>param_grid, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">'accuracy'</span>, factor<span class="op">=</span><span class="dv">3</span></span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the model to the data</span></span>
-<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>halving_search.fit(X_resampled, y_resampled)</span>
-<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the best parameters</span></span>
-<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>best_params <span class="op">=</span> halving_search.best_params_</span>
-<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Best Hyperparameters:"</span>, best_params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.experimental <span class="im">import</span> enable_halving_search_cv  <span class="co"># noqa</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> HalvingGridSearchCV</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the parameter grid to search</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>param_grid <span class="op">=</span> {</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'n_estimators'</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>],</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'max_depth'</span>: [<span class="va">None</span>, <span class="dv">10</span>, <span class="dv">20</span>],</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'min_samples_split'</span>: [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>],</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'min_samples_leaf'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'max_features'</span>: [<span class="st">'sqrt'</span>, <span class="st">'log2'</span>]</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a RandomForestClassifier</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>rf_model <span class="op">=</span> RandomForestClassifier(random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Create HalvingGridSearchCV object</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>halving_search <span class="op">=</span> HalvingGridSearchCV(</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    estimator<span class="op">=</span>rf_model, param_grid<span class="op">=</span>param_grid, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">'accuracy'</span>, factor<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the model to the data</span></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>halving_search.fit(X_resampled, y_resampled)</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the best parameters</span></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>best_params <span class="op">=</span> halving_search.best_params_</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Best Hyperparameters:"</span>, best_params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Best Hyperparameters: {'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}</code></pre>
 </div>
 </div>
+<h3 class="anchored">
+Results From The Hyperparameter Tuning Process:
+</h3>
 <p>
-GrideSearchCV() is a method that performs an exhaustive search over specified parameter values for an estimator.
+The best combination of hyperparameters is:
 </p>
-<p>Best Hyperparameters: {‘max_depth’: None, ‘max_features’: ‘sqrt’, ‘min_samples_leaf’: 1, ‘min_samples_split’: 2, ‘n_estimators’: 100}</p>
+<ul>
+<li>
+<code>max_depth</code> = None
+</li>
+<li>
+<code>max_features</code> = sqrt
+</li>
+<li>
+<code>min_samples_leaf</code> = 1
+</li>
+<li>
+<code>min_samples_split</code> = 2
+</li>
+<li>
+<code>n_estimators</code> = 100
+</li>
+</ul>
+<h2 class="anchored">
+Re-fitting the Model With the Best Parameters
+</h2>
+<div class="cell" data-execution_count="22">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply SMOTE to the training set</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.over_sampling <span class="im">import</span> SMOTE</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>smote <span class="op">=</span> SMOTE(random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>X_resampled, y_resampled <span class="op">=</span> smote.fit_resample(X_train, y_train)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and train the RandomForestClassifier on the resampled data</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>rf_model <span class="op">=</span> RandomForestClassifier(max_depth<span class="op">=</span><span class="va">None</span>, </span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>                                  max_features<span class="op">=</span><span class="st">'sqrt'</span>,</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>                                  min_samples_leaf<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>                                  min_samples_split<span class="op">=</span><span class="dv">2</span>, </span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>                                  n_estimators<span class="op">=</span><span class="dv">100</span>, </span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>                                  random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>rf_model.fit(X_resampled, y_resampled)</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the test set</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<h2 class="anchored">
+Re-Evaluating the Model
+</h2>
+<p>
+Now that the model has been trained with the best parameters, I can proceed to re-evaluate the model. like before, I tested the accuracy, confusion matrix and created a report
+</p>
+<p>
+I also further tested with AUROC metric to check the performance of the model given the heavy class imbalance observed
+</p>
+<div class="cell" data-execution_count="23">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> classification_report(y_test, y_pred)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>confusion_mat <span class="op">=</span> confusion_matrix(y_test, y_pred)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Classification Report:</span><span class="ch">\n</span><span class="st">"</span>, report)</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Confusion Matrix:</span><span class="ch">\n</span><span class="st">"</span>, confusion_mat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Accuracy: 0.8373
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.87      0.95      0.91      8504
+           1       0.42      0.22      0.28      1496
+
+    accuracy                           0.84     10000
+   macro avg       0.64      0.58      0.60     10000
+weighted avg       0.80      0.84      0.81     10000
+
+Confusion Matrix:
+ [[8050  454]
+ [1173  323]]</code></pre>
+</div>
+</div>
+<p>Disussio of results</p>
+<h3 class="anchored">
+Testing with AUROC Metric
+</h3>
+<p>
+Considering the class imbalance, I decided to use the AUROC metric to evaluate the model. The AUROC metric is a popular metric for evaluating classification models with imbalanced classes. I used the <code>roc_auc_score()</code> method from the <code>sklearn.metrics</code> module to evaluate the model.
+</p>
+<div class="cell" data-execution_count="26">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> precision_recall_curve, auc</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict probabilities for positive class (class 1)</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>probas_pred <span class="op">=</span> rf_model.predict_proba(X_test)[:, <span class="dv">1</span>]</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute precision-recall curve and AUC-PR</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>precision, recall, _ <span class="op">=</span> precision_recall_curve(y_test, probas_pred)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>area_under_pr_curve <span class="op">=</span> auc(recall, precision)</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Precision-Recall curve</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>plt.plot(recall, precision, label<span class="op">=</span><span class="ss">f'AUC-PR = </span><span class="sc">{</span>area_under_pr_curve<span class="sc">:.2f}</span><span class="ss">'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Recall'</span>)</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Precision'</span>)</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Precision-Recall Curve'</span>)</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Area Under the Precision-Recall Curve (AUC-PR): </span><span class="sc">{</span>area_under_pr_curve<span class="sc">:.2f}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Area Under the Precision-Recall Curve (AUC-PR): 0.37</code></pre>
+</div>
+</div>
+<h1>
+Answering The Business Question With The Predictive Model
+</h1>
+<p>
+Now that I have a predictive model tuned and tested, I can proceed to answer the business question.
+</p>
+<p>
+The Goal of the project is to help British Airwyays understand their customer’s booking behaviour for the holidays by looking at 5000 records of customer fligt booking data. Through the predictive model, we can answer the following business questions:
+</p>
+<blockquote style="
+    font-size: 22px; 
+    color: #333; 
+    padding: 20px; 
+    margin: 20px 0; 
+    border-left: 10px solid #7792f9; 
+    line-height: 1.6; 
+    position: relative; 
+    background: #e9f5ff;" class="blockquote">
+<em><em style="font-weight:bold">1. </em>What Variables Contribute to Customers Booking Holidays With British Airways</em>
+</blockquote>
+<blockquote style="
+    font-size: 22px; 
+    color: #333; 
+    padding: 20px; 
+    margin: 20px 0; 
+    border-left: 10px solid #7792f9; 
+    line-height: 1.6; 
+    position: relative; 
+    background: #e9f5ff;" class="blockquote">
+<em><em style="font-weight:bold">2. </em>Is It Viable To Use The Data to Predict Customers Booking Holidays With British Airways</em>
+</blockquote>
+<p>
+Based on the predictive model, we can find out about the variables that have the most significant impact on booking completions
+</p>
+<h2 class="anchored">
+Finding The Most Important Variables
+</h2>
+<div class="cell" data-execution_count="25">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract feature importances from the trained model</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>feature_importances <span class="op">=</span> rf_model.feature_importances_</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame with feature names and their importances</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>feature_importance_df <span class="op">=</span> pd.DataFrame({<span class="st">'Feature'</span>: X_train.columns, <span class="st">'Importance'</span>: feature_importances})</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort the DataFrame by importance in descending order</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>feature_importance_df <span class="op">=</span> feature_importance_df.sort_values(by<span class="op">=</span><span class="st">'Importance'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Select the top 10 features</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>top_10_features <span class="op">=</span> feature_importance_df.head(<span class="dv">10</span>)</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the feature importances for the top 10 features</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>plt.barh(top_10_features[<span class="st">'Feature'</span>], top_10_features[<span class="st">'Importance'</span>])</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Importance'</span>)</span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 10 Feature Importances'</span>)</span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sorted feature importances for the top 10 features</span></span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(top_10_features)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-24-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     Feature  Importance
+62   booking_origin_Malaysia    0.104948
+8            flight_duration    0.085819
+1              purchase_lead    0.082578
+2             length_of_stay    0.066818
+3                flight_hour    0.064356
+4                 flight_day    0.050064
+15  booking_origin_Australia    0.024203
+48  booking_origin_Indonesia    0.023563
+0             num_passengers    0.023013
+28      booking_origin_China    0.018264</code></pre>
+</div>
+</div>
+<p>
+It can be seen from the above plot the top ten(10) most important variables that contribute to customers booking holidays with British Airways
+</p>
+<h2 class="anchored">
+Viability for Use in Making Predictions
+</h2>
+<p>The model was trained on 5000 records of customer flight booking data. The model was tested on 5000 records of customer flight booking data. The model was able to predict booking completions with 83.7% Accuracy.</p>
+<p>However, The model has room for improvement. More data can be collected, particularly data on the customers who completed the booking. This will help to improve the model’s performance significantly. Other techniques include the ensemble approach to learning, which involves combining multiple models to improve the model’s performance.</p>
+<p>overall the model is viable for use in making predictions.</p>
+<h1>
+Conclusion
+</h1>
+<p>
+In this notebook, I demonstrated my data science process for building a predictive model based of customer flight booking data. I performed exploratory data analysis, cleaned and prepared the data for modeling, performed feature engineering, built and evaluated models, tested the model on unseen data, and interpreted the model results to answer the business questions.
+</p>
+<p>
+Through the predictive model, we can answer the following business questions:
+</p>
+<ul>
+<li>
+What Variables Contribute to Customers Booking Holidays With British Airways?
+</li>
+<li>
+Is It Viable To Use The Data to Predict Customers Booking Holidays With British Airways?
+</li>
+</ul>
+<p>
+With insights from the predictive model, British Airways sales and marketing function can deploy their strategy to <code>flight origins</code> like Malaysia, Australia, Indonesia and China to increase their sales and revenue. They can also experiment with promotional incentives around <code>flight duration</code>, <code>purchase lead</code> and <code>length of stay</code>.
+</p>
+<p>
+Logistics and Supply Chain function can use the predictive model to forecast the demand for flights during holiday seasons based on historical booking patterns. This can enable the team to Adjust inventory levels and allocate resources more efficiently in response to predicted demand.
+</p>
+<p>
+If you made it this far, Thank you for reading this notebook. I hope you found it insightful. Please feel free to reach out with comments and feedback on my process.(simontagbor360@gmail.com)
+</p>
 
 
 
