@@ -163,24 +163,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="column-page">
-<div style="
-    background: url('headerimage.jpg') no-repeat center center; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 400px; 
-    display: flex; 
-    align-items: flex-end; 
-    justify-content: center;
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;">
-
-</div>
-</div>
 <div class="column-body-outset">
 <h1 style="color: #00205b; font-family: 'Georgia';">
 How Predictive Models Help British Airways Acquire Customers
@@ -189,7 +171,9 @@ How Predictive Models Help British Airways Acquire Customers
 </div>
 <blockquote class="blockquote">
 <p>
-The Goal of the project is to help British Airwyays understand their customer’s booking behaviour for the holidays by looking at 5000 records of customer fligt booking data. It was part of a job simulation as a Junior Data Scientist at British Airways I built a predictive model on Random Forest Algoritmn to Help British Airways Answer the following Business questions:
+The Goal of the project is to help British Airways understand their customer’s booking behaviour for the holidays by looking at 5000 records of fligt booking data.
+</p><p>
+It was part of a job simulation as a Junior Data Scientist at British Airways where I built a predictive model on Random Forest Algoritmn to Help British Airways Answer two business questions:
 </p>
 <ol style="font-size:18px">
 <li>
@@ -199,70 +183,100 @@ The Goal of the project is to help British Airwyays understand their customer’
 <em>Is it Viable to Use the gievn data to Predict Customers booking holidays with British Airways?</em>
 </li>
 </ol>
+<p></p>
 <p>
-In this Interactive Notebook I will demonstrate my data science process for building a predictive model based of customer flight booking data.follow along and be free to reach out with comments and feedback on my process.
+In this Interactive Notebook I will demonstrate my data science process for building a predictive model based of customer flight booking data.
+</p><p>
+Follow along and be free to reach out with comments and feedback on my process.
 </p>
+<p></p>
 <p>You can find the source code for this project at my <a href="https://github.com/Simontagbor/BritishAirways-predictive-ML">github page.</a> You can also find the Jupyter notebook and the dataset on my <a href="https://www.kaggle.com/simontagbor/british-airways-predictive-ml">kaggle page</a>.</p>
 </blockquote>
 <details>
 <summary>
 Click to Read Executive Summary on Research Findings
 </summary>
-<blockquote style="
-    font-size: 3vw; 
+<div style="
+    font-size: 1.5vw; 
     color: #333; 
-    padding: 2vw; 
-    margin: 2vw 0; 
-    border-left: 0.5vw solid #7792f9; 
+    padding: 1.5vw; 
+    margin: 1.5vw 0; 
+    border-left: 0.25vw solid #7792f9; 
     line-height: 1.6; 
     position: relative; 
-    background: #e9f5ff;" class="blockquote">
+    background: #e9f5ff;">
 <h2 class="anchored">
 Executive Summary
 </h2>
 <p>
 After building and testing the predictive model with 83.5% Accuracy on the given data, we discorvered Answers to the business questions:
 </p>
-<ol>
+<ul>
 <li>
 The Top Ten(10) Most Important Variables That Contribute to Customers Booking Holidays with British Airways are:
-<ol>
-<li>
-Booking Origins From Malaysia
 </li>
-<li>
-Flight Duration
-</li>
-<li>
-Purchase lead
-</li>
-<li>
-Length of stay
-</li>
-<li>
-Flight hour
-</li>
-<li>
-Flight day
-</li>
-<li>
-Flights from Australia
-</li>
-<li>
-Flights from Indonesia
-</li>
-<li>
-Number of passengers per booking
-</li>
-<li>
-Bookings from China
-</li>
-</ol>
-</li>
+</ul>
+<div style="display: grid; grid-template-columns: auto auto; padding: 10px; background-color: white; width:70%; margin-left: 9%;">
+<div style="font-size: 12px; text-align: left;">
+<ol type="1">
+<li>Booking Origins From Malaysia
+</li></ol></div>
+<div style="font-size: 12px; text-align: left;">
+<ol start="2" type="1">
+<li>Flight Duration
+</li></ol></div>
+<div style="font-size: 12px; text-align: left;">
+<ol start="3" type="1">
+<li>Purchase lead
+</li></ol></div>
+<div style="font-size: 12px; text-align: left;">
+<ol start="4" type="1">
+<li>Length of stay
+</li></ol></div>
+<div style="font-size: 12px; text-align: left;">
+<ol start="5" type="1">
+<li>Flight hour
+</li></ol></div>
+<div style="font-size: 12px; text-align: left;">
+<ol start="6" type="1">
+<li>Flight day
+</li></ol></div>
+<div style="font-size: 12px; text-align: left;">
+<ol start="7" type="1">
+<li>Flights from Australia
+</li></ol></div>
+<div style="font-size: 12px; text-align: left;">
+<ol start="8" type="1">
+<li>Flights from Indonesia
+</li></ol></div>
+<div style="font-size: 12px; text-align: left;">
+<ol start="9" type="1">
+<li>Number of passengers per booking
+</li></ol></div>
+<div style="font-size: 12px; text-align: left;">
+<ol start="10" type="1">
+<li>Bookings from China
+</li></ol></div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<ul>
 <li>
 It Is Viable To Use the Given Data to Predict Customers Booking Holidays With British Airways with 83.7% Accuracy
 </li>
-</ol>
+<p>
+</p><p>However, The model has room for improvement. More data can be collected, particularly data on the customers who completed the booking. This will help improve the model’s performance significantly. Other techniques include the ensemble approach to learning, which involves combining multiple models to improve the model’s performance.</p>
+overall the model is fairly viable for use in making predictions.
+<p></p>
+</ul>
 <h3 class="anchored">
 Potential Application of Insights
 </h3>
@@ -272,7 +286,7 @@ With insights from the predictive model, British Airways sales and marketing fun
 <p>
 Logistics and Supply Chain function can use the predictive model to forecast the demand for flights during holiday seasons based on historical booking patterns. This can enable the team to Adjust inventory levels and allocate resources more efficiently in response to predicted demand.
 </p>
-</blockquote>
+</div>
 </details>
 <h2 class="anchored">
 Project Outline
@@ -329,7 +343,7 @@ Project Dependencies
 Exploratory Data Analysis
 </h1>
 <p>
-The working <a href="https://cdn.theforage.com/vinternships/companyassets/tMjbs76F526fF5v3G/L3MQ8f6cYSkfoukmz/1667814300249/customer_booking.csv">dataset</a> contains 5000 entries of customer booking data from British Airways. The data contains 13 features and 1 target variable. The target variable is the booking completion status of the customer.
+The working <a href="https://cdn.theforage.com/vinternships/companyassets/tMjbs76F526fF5v3G/L3MQ8f6cYSkfoukmz/1667814300249/customer_booking.csv">dataset</a> contains 5000 entries of customer booking data from British Airways. The data contains 13 features and 1 target variable; the booking completion status of the customer.
 </p>
 <p>
 To understand the data, I performed exploratory data analysis. I used the following techniques to understand the data:
@@ -460,7 +474,6 @@ Visual Inspection of Data
 </div>
 </div>
 </div>
-<p>The dataframe object has a <code>.head()</code> method that allows us to view a specified number of rows in the dataset. This method came in handy for visual inspection of the dataset and to get a feel of the data.</p>
 <div class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve a summarised info about the columns</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -506,7 +519,7 @@ The summary on the columns indicates that there are:
 </li>
 </ul>
 <p>
-Here is a more detailed data description, explaining exactly what each column means:
+You can dive into the details about the description of the dataset:
 </p>
 <details>
 <summary>
@@ -557,9 +570,8 @@ Click to expand!
 </li>
 </ul>
 </details>
-<p>Considering the unique data types, I decided to perform <strong>label encoding</strong> to convert the categorical variables to numerical variables. converting categorical variables to numerical representations will allow me to use machine learning algorithms effectively.</p>
 <p>
-In our case the ideal candidate for label encoding is: <code>flight_day</code>. this is because it is currently a nominal variable with no order or hierarchy.
+For the purposes of priliminary analysis, I will encode the categorical <code>flight_day</code> column to represent the days of the week as hierachical integers.
 </p>
 <div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"flight_day"</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -593,7 +605,12 @@ To encode this variable I will map the days of the week to the following numeric
 <pre><code>array([6, 3, 4, 1, 7, 2, 5])</code></pre>
 </div>
 </div>
-<p>As can be seen the <code>fligt_days</code> column has been successfully encoded.</p>
+<p>
+As can be seen the <code>fligt_days</code> column has been successfully encoded.
+</p>
+<p>
+Now Let’s begin by performing some summary statistics on the data. doing so will help us have a sense of the spread of the data and do an initial spot check for outliers.
+</p>
 <h3 class="anchored">
 Summary Statistics
 </h3>
@@ -765,10 +782,16 @@ booking_complete         0
 dtype: int64</code></pre>
 </div>
 </div>
+<p>There currently no null values in the dataset. This is good news!</p>
+<p>
+In the next step I will use visualisations to bring to life patterns in the data. These patterns will inform decisions around feature engineering and model selection.
+</p>
 <h2 class="anchored">
-Exploratory Visualizations of the data
+Exploratory Data Visualizations
 </h2>
-<p>I perfomed preliminary data analysis to understand the shape and spread of the dataset and to also have a first glance of the relationships between the target variable and the rest of the variables. I used the following techniques to understand the data:</p>
+<p>
+To highlight the distributions of the individual vaiables as well as the relationsip between the variables and the target variables, I used the following techniques:
+</p>
 <ul class="task-list">
 <li><input type="checkbox" checked="">Univariate Analysis</li>
 <li><input type="checkbox" checked="">Bivariate Analysis</li>
@@ -776,13 +799,13 @@ Exploratory Visualizations of the data
 <h3 class="anchored">
 Univariate analysis
 </h3>
-<p>My goal for this initial step was to understand the distribution of each variable in the dataset. I used the following techniques to understand the distribution:</p>
+<p>My goal for this initial step was to understand the overall distribution of each variable in the dataset. I used the following techniques to achieve this:</p>
 <ul class="task-list">
 <li><input type="checkbox" checked="">distribution plots</li>
 <li><input type="checkbox" checked="">tree maps</li>
 <li><input type="checkbox" checked="">bar plots</li>
 </ul>
-<p>hopefully, patterns and outliers would emerge from this analysis that would help me understand the data better.</p>
+<p>Hopefully, patterns and outliers would emerge from this analysis.</p>
 <ul>
 <li><code>booking_complete</code></li>
 <li><code>num_passengers</code></li>
@@ -794,7 +817,7 @@ Univariate analysis
 <li><code>flight_duration</code></li>
 <li><code>route</code></li>
 </ul>
-<p>I examined the above selected variables in the dataset using distribution plots. The plots below show the distribution of the following variables:</p>
+<p>I examined these variables in the dataset using distribution plots. The plots below show the distribution of the following variables:</p>
 <div class="cell" data-execution_count="36">
 <details>
 <summary>Show the code</summary>
@@ -969,7 +992,10 @@ The Univariate analysis revealed the following insights:
 <h2 class="anchored">
 Bivariate Analysis Using Heat Maps
 </h2>
-<p>My goal for this step was to understand the relationship between each variable and the target variable. For the purposes of this project, the target variable is <code>booking_complete</code>. Considering that there are 14 variables I decided to use heatmaps to visualize the correlation between each variable and the target variable.</p>
+<p>My goal for this step was to understand the relationship between each variable and the target variable. .</p>
+<p>
+Considering that there are 14 variables, I decided to use heatmaps to visualize the correlation between each variable and the target variable.
+</p>
 <p>I chose the heatmap because it allowed me to visualize the correlation between each variable and the target variable in one plot. This is a very efficient way to visualize the correlation between variables.</p>
 <p>Before the Bivariate analysis, I Had some hypotheses about the relationship between the variables and the target variable. The hypotheses were as follows:</p>
 <ul class="task-list">
@@ -983,10 +1009,7 @@ Bivariate Analysis Using Heat Maps
 Preprocessing the data for Bivariate analysis
 </h3>
 <p>
-Some of the variables in the dataset are categorical variables that have no inherent order.The correalation matrix which will be used for analysis requires all variables to have numerical representations. Hence the need to label encode the remaining nominal variables:
-</p>
-<p>
-To perform bivariate analysis on these variables I need to convert them to numerical representations using one-hot encoding. I used the pandas <code>get_dummies()</code> method to perform one-hot encoding on the following variables:
+Some of the variables in the dataset are categorical variables that have no inherent order.That presents a challenge because the correalation matrix which will be used for analysis requires all variables to have numerical representations. Hence the need to label encode the remaining nominal variables:
 </p>
 <ul>
 <li>
@@ -1133,7 +1156,7 @@ The Random Forest algorithm is also very robust to outliers and noise in the dat
 Preprocessing The Data for Predictive Modeling
 </h2>
 <p>
-Before proceeding to training the model:
+Before proceeding to training the model I need to:
 </p>
 <ul>
 <li>
@@ -1724,7 +1747,7 @@ Now that I have a predictive model tuned and tested, I can proceed to answer the
 The Goal of the project is to help British Airwyays understand their customer’s booking behaviour for the holidays by looking at 5000 records of customer fligt booking data. Through the predictive model, we can answer the following business questions:
 </p>
 <blockquote style="
-    font-size: 22px; 
+    font-size: 18px; 
     color: #333; 
     padding: 20px; 
     margin: 20px 0; 
@@ -1735,7 +1758,7 @@ The Goal of the project is to help British Airwyays understand their customer’
 <em><em style="font-weight:bold">1. </em>What Variables Contribute to Customers Booking Holidays With British Airways</em>
 </blockquote>
 <blockquote style="
-    font-size: 22px; 
+    font-size: 18px; 
     color: #333; 
     padding: 20px; 
     margin: 20px 0; 
