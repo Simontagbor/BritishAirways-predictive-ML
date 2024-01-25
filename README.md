@@ -1,6 +1,6 @@
 # BritishAirways-data-science
 
-This Project is a job simulation for the British Airways Data Science role. The Major task of the Job is to help British Airways Understand their customers better by looking at their booking behaviour.
+This Project was completed as part of a job simulation as A junior Data Scientist for British Airways.  The Major task of the Job is to help British Airways Understand their customers better by looking at their booking behaviour.
 
 
 ### How to reproduce the results
